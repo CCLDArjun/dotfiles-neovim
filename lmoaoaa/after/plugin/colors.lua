@@ -75,7 +75,7 @@ end
 
 -- gruvbox_scheme()
 -- catcuppin()
-vim.cmd.colorscheme "skull"
+-- vim.cmd.colorscheme "skull"
 local c = require('vscode.colors').get_colors()
 -- require('vscode').setup({
 --     -- Alternatively set style in setup
@@ -103,5 +103,5 @@ local c = require('vscode.colors').get_colors()
 --     }
 -- })
 -- require('vscode').load()
--- gruvbox_scheme()
+gruvbox_scheme()
 
