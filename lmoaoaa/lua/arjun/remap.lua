@@ -24,7 +24,7 @@ nmap("<C-l>", ":wincmd l<CR>")
 nmap("<C-j>", ":wincmd j<CR>")
 nmap("<C-k>", ":wincmd k<CR>")
 
-nmap("<leader>pv", vim.cmd.Ex)
+nmap("<leader>rw", vim.cmd.Ex)
 
 vmap("J", ":m '>+1<CR>gv=gv")
 vmap("K", ":m '<-2<CR>gv=gv")
@@ -57,4 +57,6 @@ nmap("<leader><leader>", function()
 end)
 
 nmap("<leader>ls", ":TagbarToggle<CR>")
+
+nmap("<leader>nt", ":NERDTreeToggle<CR>")
 
