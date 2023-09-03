@@ -17,10 +17,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use('dstein64/vim-startuptime')
+    use('nvim-lua/plenary.nvim')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('theprimeagen/harpoon')
     use('ellisonleao/gruvbox.nvim')
@@ -33,7 +31,6 @@ return require('packer').startup(function(use)
     use('fxn/vim-monochrome')
     use('Mofiqul/vscode.nvim')
     use('dhananjaylatkar/cscope_maps.nvim')
-    use('kelly-lin/telescope-ag')
     use('tpope/vim-fugitive')
     use('preservim/nerdtree')
     use { 'junegunn/fzf', run = ":call fzf#install()" }
