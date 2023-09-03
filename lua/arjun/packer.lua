@@ -36,8 +36,8 @@ return require('packer').startup(function(use)
     use('kelly-lin/telescope-ag')
     use('tpope/vim-fugitive')
     use('preservim/nerdtree')
-    -- use { 'junegunn/fzf', run = ":call fzf#install()" }
-    -- use ('junegunn/fzf.vim')
+    use { 'junegunn/fzf', run = ":call fzf#install()" }
+    use ('junegunn/fzf.vim')
       if packer_bootstrap then
         require('packer').sync()
       end
