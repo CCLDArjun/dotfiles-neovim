@@ -45,7 +45,6 @@ nmap("<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 nmap("Q", "<nop>")
-nmap("<leader>f", vim.lsp.buf.format)
 
 nmap("<leader>k", "<cmd>lnext<CR>zz")
 nmap("<leader>j", "<cmd>lprev<CR>zz")
