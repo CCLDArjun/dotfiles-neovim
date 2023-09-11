@@ -30,3 +30,5 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.clipboard = unnamedplus
+
+vim.opt.pumheight = 3 -- only want 3 completion items
