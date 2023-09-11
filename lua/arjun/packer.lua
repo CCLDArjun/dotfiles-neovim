@@ -17,6 +17,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+    use('justinmk/vim-sneak')
     use('dstein64/vim-startuptime')
     use('nvim-lua/plenary.nvim')
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -35,6 +36,7 @@ return require('packer').startup(function(use)
     use('preservim/nerdtree')
     use { 'junegunn/fzf', run = ":call fzf#install()" }
     use ('junegunn/fzf.vim')
+    use ('flazz/vim-colorschemes')
       if packer_bootstrap then
         require('packer').sync()
       end
