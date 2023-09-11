@@ -37,6 +37,12 @@ return require('packer').startup(function(use)
     use { 'junegunn/fzf', run = ":call fzf#install()" }
     use ('junegunn/fzf.vim')
     use ('flazz/vim-colorschemes')
+
+    use('hrsh7th/nvim-cmp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+    use('saadparwaiz1/cmp_luasnip')
+    use('rafamadriz/friendly-snippets')
       if packer_bootstrap then
         require('packer').sync()
       end
