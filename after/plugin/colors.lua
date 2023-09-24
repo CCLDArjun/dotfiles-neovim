@@ -120,7 +120,7 @@ colors = {
     "catppuccin-mocha",
 }
 
-math.randomseed(os.date("*t").hour)
+math.randomseed(os.date("*t").hour * 46744073709551615)
 local scheme = colors[math.random(1, #colors)]
 print(scheme)
 vim.cmd("colorscheme " .. scheme)
