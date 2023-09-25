@@ -129,9 +129,10 @@ colors = {
     "gruvbox",
 }
 
---math.randomseed(math.floor(os.date("*t").hour / 3) * 46744073709551615)
-math.randomseed(os.time())
+math.randomseed(math.floor(os.date("*t").hour / 3) * 46744073709551615)
+--math.randomseed(os.time())
 local scheme = colors[math.random(1, #colors)]
+vim.cmd("set background=dark")
 vim.cmd("colorscheme " .. scheme)
 print(scheme)
 
