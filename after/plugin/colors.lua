@@ -109,7 +109,6 @@ vscode()
 catcuppin()
 
 colors = {
-    "darkblue",
     "elflord",
     "evening",
     "morning",
@@ -118,10 +117,21 @@ colors = {
     "catppuccin-macchiato",
     "catppuccin-frappe",
     "catppuccin-mocha",
+    "nordic",
+    "tokyonight-night",
+    "tokyonight-storm",
+    "tokyonight-moon",
+    "kanagawa-dragon",
+    "kanagawa-lotus",
+    "kanagawa-wave",
+    "kanagawa",
+    "onenord",
+    "gruvbox",
 }
 
-math.randomseed(os.date("*t").hour * 46744073709551615)
+--math.randomseed(math.floor(os.date("*t").hour / 3) * 46744073709551615)
+math.randomseed(os.time())
 local scheme = colors[math.random(1, #colors)]
-print(scheme)
 vim.cmd("colorscheme " .. scheme)
+print(scheme)
 
