@@ -50,6 +50,6 @@ require'treesitter-context'.setup{
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
-vim.cmd([[highlight TreesitterContext ctermfg=0 ctermbg=244]])
-vim.cmd([[highlight TreesitterContextBottom gui=underline guisp=Grey]])
+-- vim.cmd([[highlight TreesitterContext ctermfg=0 ctermbg=244]])
+-- vim.cmd([[highlight TreesitterContextBottom gui=underline guisp=Grey]])
 
