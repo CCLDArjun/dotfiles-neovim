@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-obsession')
     use('f-person/git-blame.nvim')
     use{'kevinhwang91/nvim-bqf', ft = 'qf' }
+    use('nvim-treesitter/nvim-treesitter-context')
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.2',
       requires = { {'nvim-lua/plenary.nvim'} }
