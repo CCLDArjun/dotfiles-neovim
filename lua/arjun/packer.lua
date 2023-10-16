@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-path')
     use('saadparwaiz1/cmp_luasnip')
     use('rafamadriz/friendly-snippets')
+    use('romainl/vim-cool')
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.2',
       requires = { {'nvim-lua/plenary.nvim'} }
