@@ -22,3 +22,12 @@ vim.keymap.set("n", "<C-6>", function() ui.nav_file(6) end)
 vim.keymap.set("n", "<C-7>", function() ui.nav_file(7) end)
 vim.keymap.set("n", "<C-8>", function() ui.nav_file(8) end)
 
+
+vim.keymap.set("n", "<F37>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<F38>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<F39>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<F40>", function() ui.nav_file(4) end)
+vim.keymap.set("n", "<F41>", function() ui.nav_file(5) end)
+vim.keymap.set("n", "<F42>", function() ui.nav_file(6) end)
+vim.keymap.set("n", "<F43>", function() ui.nav_file(7) end)
+vim.keymap.set("n", "<F44>", function() ui.nav_file(8) end)

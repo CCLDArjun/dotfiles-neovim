@@ -14,7 +14,7 @@ vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir/"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -32,3 +32,5 @@ vim.opt.splitbelow = true
 vim.opt.clipboard = unnamedplus
 
 vim.opt.pumheight = 3 -- only want 3 completion items
+
+vim.g.gitblame_enabled = 0

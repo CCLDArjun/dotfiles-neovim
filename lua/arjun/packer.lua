@@ -15,7 +15,6 @@ local packer_bootstrap = ensure_packer()
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
     use('justinmk/vim-sneak')
     use('dstein64/vim-startuptime')
@@ -44,6 +43,14 @@ return require('packer').startup(function(use)
     use('saadparwaiz1/cmp_luasnip')
     use('rafamadriz/friendly-snippets')
     use('romainl/vim-cool')
+    use('folke/tokyonight.nvim')
+    use('rebelot/kanagawa.nvim')
+    use('rmehri01/onenord.nvim')
+    use('AlexvZyl/nordic.nvim')
+    use('tpope/vim-obsession')
+    use('f-person/git-blame.nvim')
+    use{'kevinhwang91/nvim-bqf', ft = 'qf' }
+    use('nvim-treesitter/nvim-treesitter-context')
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.2',
       requires = { {'nvim-lua/plenary.nvim'} }

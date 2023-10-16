@@ -73,35 +73,66 @@ function catcuppin()
     vim.cmd.colorscheme "catppuccin"
 end
 
--- gruvbox_scheme()
--- catcuppin()
--- vim.cmd.colorscheme "skull"
-local c = require('vscode.colors').get_colors()
--- require('vscode').setup({
---     -- Alternatively set style in setup
---     -- style = 'light'
--- 
---     -- Enable transparent background
---     transparent = true,
--- 
---     -- Enable italic comment
---     italic_comments = true,
--- 
---     -- Disable nvim-tree background color
---     disable_nvimtree_bg = true,
--- 
---     -- Override colors (see ./lua/vscode/colors.lua)
---     color_overrides = {
---         vscLineNumber = '#FFFFFF',
---     },
--- 
---     -- Override highlight groups (see ./lua/vscode/theme.lua)
---     group_overrides = {
---         -- this supports the same val table as vim.api.nvim_set_hl
---         -- use colors from this colorscheme by requiring vscode.colors!
---         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
---     }
--- })
--- require('vscode').load()
+function vscode()
+    local c = require('vscode.colors').get_colors()
+    require('vscode').setup({
+        -- Alternatively set style in setup
+        -- style = 'light'
+
+        -- Enable transparent background
+        transparent = true,
+
+        -- Enable italic comment
+        italic_comments = true,
+
+        -- Disable nvim-tree background color
+        disable_nvimtree_bg = true,
+
+        -- Override colors (see ./lua/vscode/colors.lua)
+        color_overrides = {
+            vscLineNumber = '#FFFFFF',
+        },
+
+        -- Override highlight groups (see ./lua/vscode/theme.lua)
+        group_overrides = {
+            -- this supports the same val table as vim.api.nvim_set_hl
+            -- use colors from this colorscheme by requiring vscode.colors!
+            Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+        }
+    })
+    require('vscode').load()
+    vim.cmd.colorscheme 'vscode'
+end
+
+vscode()
+catcuppin()
 gruvbox_scheme()
 
+colors = {
+    "elflord",
+    "evening",
+    "morning",
+    "peachpuff",
+    "gruvbox",
+    "catppuccin-macchiato",
+    "catppuccin-frappe",
+    "catppuccin-mocha",
+    "nordic",
+    "tokyonight-night",
+    "tokyonight-storm",
+    "tokyonight-moon",
+    "kanagawa-dragon",
+    "kanagawa-lotus",
+    "kanagawa-wave",
+    "kanagawa",
+    "onenord",
+    "gruvbox",
+}
+
+--math.randomseed(math.floor(os.date("*t").hour / 3) * 46744073709551615)
+----math.randomseed(os.time())
+--local scheme = colors[math.random(1, #colors)]
+vim.cmd("set background=dark")
+--vim.cmd("colorscheme " .. scheme)
+--print(scheme)
+--
