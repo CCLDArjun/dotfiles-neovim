@@ -57,7 +57,7 @@ end)
 nmap("<leader>ls", ":TagbarToggle<CR>")
 
 nmap("<leader>nt", ":NERDTreeToggle<CR>")
-nmap("<leader>rw", ":NERDTreeToggle<CR>")
+nmap("<leader>rw", ":NERDTreeFind<CR>")
 
 nmap("<leader>gb" , ":GitBlameToggle<CR>")
 nmap("<leader>cx", ":TSContextToggle<CR>")
