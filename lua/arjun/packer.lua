@@ -1,62 +1,56 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+plugins = {
+	{ "justinmk/vim-sneak" },
+	{ "dstein64/vim-startuptime" },
+	{ "nvim-lua/plenary.nvim" },
+	{ "nvim-treesitter/nvim-treesitter" },
+	{ "theprimeagen/harpoon" },
+	{ "ellisonleao/gruvbox.nvim" },
+	{ "mbbill/undotree" },
+	{ "catppuccin/nvim" },
+	{ "preservim/tagbar" },
+	{ "kadekillary/skull-vim" },
+	{ "andreypopp/vim-colors-plain" },
+	{ "owickstrom/vim-colors-paramount" },
+	{ "fxn/vim-monochrome" },
+	{ "Mofiqul/vscode.nvim" },
+	{ "dhananjaylatkar/cscope_maps.nvim" },
+	{ "tpope/vim-fugitive" },
+	{ "preservim/nerdtree" },
+	{ 'junegunn/fzf' },
+	{ "junegunn/fzf.vim" },
+	{ "flazz/vim-colorschemes" },
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "rafamadriz/friendly-snippets" },
+	{ "romainl/vim-cool" },
+	{ "folke/tokyonight.nvim" },
+	{ "rebelot/kanagawa.nvim" },
+	{ "rmehri01/onenord.nvim" },
+	{ "AlexvZyl/nordic.nvim" },
+	{ "tpope/vim-obsession" },
+	{ "f-person/git-blame.nvim" },
+	{ "kevinhwang91/nvim-bqf" },
+	{ "nvim-treesitter/nvim-treesitter-context" },
+	{ "github/copilot.vim", enabled = copilot},
+	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+}
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-    use('justinmk/vim-sneak')
-    use('dstein64/vim-startuptime')
-    use('nvim-lua/plenary.nvim')
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('theprimeagen/harpoon')
-    use('ellisonleao/gruvbox.nvim')
-    use('mbbill/undotree')
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use('preservim/tagbar')
-    use('kadekillary/skull-vim')
-    use('andreypopp/vim-colors-plain')
-    use('owickstrom/vim-colors-paramount')
-    use('fxn/vim-monochrome')
-    use('Mofiqul/vscode.nvim')
-    use('dhananjaylatkar/cscope_maps.nvim')
-    use('tpope/vim-fugitive')
-    use('preservim/nerdtree')
-    use { 'junegunn/fzf', run = ":call fzf#install()" }
-    use ('junegunn/fzf.vim')
-    use ('flazz/vim-colorschemes')
+vim.g.mapleader = " "
+require("lazy").setup(plugins)
 
-    use('hrsh7th/nvim-cmp')
-    use('hrsh7th/cmp-buffer')
-    use('hrsh7th/cmp-path')
-    use('saadparwaiz1/cmp_luasnip')
-    use('rafamadriz/friendly-snippets')
-    use('romainl/vim-cool')
-    use('folke/tokyonight.nvim')
-    use('rebelot/kanagawa.nvim')
-    use('rmehri01/onenord.nvim')
-    use('AlexvZyl/nordic.nvim')
-    use('tpope/vim-obsession')
-    use('f-person/git-blame.nvim')
-    use{'kevinhwang91/nvim-bqf', ft = 'qf' }
-    use('nvim-treesitter/nvim-treesitter-context')
-    use('github/copilot.vim')
-    use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.2',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
-      if packer_bootstrap then
-        require('packer').sync()
-      end
-end)
