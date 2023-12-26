@@ -31,6 +31,14 @@ cmp.setup({
     })
 })
 
+cmp.setup.filetype({"markdown", "rst", "txt"}, {
+    sources = cmp.config.sources({
+      { name = 'path', keyword_length=keyword_length },
+      { name = 'buffer', keyword_length=keyword_length, keep_all_entries = false },
+      { name = 'spell',  keyword_length=keyword_length },
+    })
+})
+
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
