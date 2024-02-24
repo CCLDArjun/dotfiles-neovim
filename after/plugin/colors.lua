@@ -21,7 +21,6 @@ function gruvbox_scheme()
       dim_inactive = false,
       transparent_mode = false,
     })
-    vim.cmd("colorscheme gruvbox")
 end
 
 function catcuppin()
@@ -70,7 +69,6 @@ function catcuppin()
     })
 
     -- setup must be called before loading
-    vim.cmd.colorscheme "catppuccin"
 end
 
 function vscode()
@@ -100,13 +98,14 @@ function vscode()
             Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
         }
     })
-    require('vscode').load()
-    vim.cmd.colorscheme 'vscode'
 end
 
 vscode()
 catcuppin()
 gruvbox_scheme()
+
+vim.cmd.colorscheme 'catppuccin'
+
 
 colors = {
     "elflord",
