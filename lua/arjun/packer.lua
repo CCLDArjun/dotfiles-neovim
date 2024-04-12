@@ -50,6 +50,7 @@ plugins = {
     { "kevinhwang91/nvim-bqf" },
     { "github/copilot.vim", enabled = copilot},
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    { "airblade/vim-gitgutter" },
 }
 
 
