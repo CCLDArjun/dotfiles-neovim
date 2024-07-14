@@ -19,7 +19,23 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+-- Function to set scrolloff based on window height
+local scrolloff_divider = 5
+local max_scrolloff = 6
+vim.api.nvim_create_autocmd({"WinEnter", "WinResized", "BufWinEnter", }, {
+    callback = function()
+        local win_height = vim.api.nvim_win_get_height(0)
+        if win_height < 20 then
+            vim.opt.scrolloff = 2
+        else
+            vim.opt.scrolloff = math.min(
+                math.floor(win_height / scrolloff_divider),
+                max_scrolloff
+            )
+        end
+    end,
+})
+
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
