@@ -25,15 +25,14 @@ local max_scrolloff = 6
 vim.api.nvim_create_autocmd({"WinEnter", "WinResized", "BufWinEnter", }, {
     callback = function()
         local win_height = vim.api.nvim_win_get_height(0)
-        if win_height < 20 then
-            vim.opt.scrolloff = 2
-        else
-            vim.opt.scrolloff = math.min(
-                math.floor(win_height / scrolloff_divider),
-                max_scrolloff
-            )
-        end
-    end,
+        vim.opt.scrolloff = math.min(
+            math.max(
+                math.floor(win_height / scrolloff_divider) - 1,
+                0
+            ),
+            max_scrolloff
+        )
+    end
 })
 
 vim.opt.signcolumn = "yes"
@@ -41,6 +40,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+vim.opt.equalalways = false
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -62,3 +62,6 @@ end
 require('gitblame').setup {
     enabled = false,
 }
+
+local config_dir = vim.fn.stdpath('config')
+vim.g.tagbar_ctags_bin = config_dir .. "/bin/ctags"
