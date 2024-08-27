@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -51,6 +51,38 @@ plugins = {
     { "github/copilot.vim", enabled = copilot},
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     { "airblade/vim-gitgutter" },
+    { "akinsho/toggleterm.nvim" },
+    { "neoclide/coc.nvim" },
+    { "alec-gibson/nvim-tetris" },
+    {
+        "lervag/vimtex",
+        lazy = false,
+        init = function() vim.g.vimtex_view_method = "zathura" end
+    },
+    { 
+        "benlubas/molten-nvim",
+        dependencies = { "3rd/image.nvim" },
+        build = ":UpdateRemotePlugins",
+        init = function()
+            vim.g.molten_image_provider = "image.nvim"
+            vim.g.molten_output_win_max_height = 20
+        end,
+    },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1001, -- this plugin needs to run before anything else
+        opts = {
+            rocks = { "magick" },
+        },
+    },
+    {
+        "3rd/image.nvim",
+        version = "1.1.0",
+        dependencies = { "luarocks.nvim" },
+        config = function()
+            -- ...
+        end
+    },
 }
 
 
