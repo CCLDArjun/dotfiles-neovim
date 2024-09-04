@@ -15,15 +15,18 @@ plugins = {
     { "justinmk/vim-sneak" },
     { "dstein64/vim-startuptime" },
     { "nvim-lua/plenary.nvim" },
-    { "nvim-treesitter/nvim-treesitter" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", tag="v0.9.2" },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "nvim-treesitter/playground" },
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = {"nvim-treesitter/nvim-treesitter" }
+    },
     { "theprimeagen/harpoon" },
     { "ellisonleao/gruvbox.nvim" },
     { "mbbill/undotree" },
     { "catppuccin/nvim" },
     { "preservim/tagbar" },
-    { "kadekillary/skull-vim" },
     { "andreypopp/vim-colors-plain" },
     { "owickstrom/vim-colors-paramount" },
     { "fxn/vim-monochrome" },
@@ -51,6 +54,7 @@ plugins = {
     { "github/copilot.vim", enabled = copilot},
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     { "airblade/vim-gitgutter" },
+    {'akinsho/toggleterm.nvim', version = "*", config = true}
 }
 
 
