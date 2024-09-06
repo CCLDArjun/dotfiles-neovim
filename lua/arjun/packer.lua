@@ -54,7 +54,8 @@ plugins = {
     { "github/copilot.vim", enabled = copilot},
     { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
     { "airblade/vim-gitgutter" },
-    {'akinsho/toggleterm.nvim', version = "*", config = true}
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+    { "echasnovski/mini.starter", version = "*" },
 }
 
 
