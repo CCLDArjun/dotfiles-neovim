@@ -15,7 +15,7 @@ plugins = {
     { "justinmk/vim-sneak" },
     { "dstein64/vim-startuptime" },
     { "nvim-lua/plenary.nvim" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", tag="v0.9.2" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "nvim-treesitter/playground" },
     {
